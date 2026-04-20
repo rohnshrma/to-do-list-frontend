@@ -1,0 +1,12 @@
+.header {
+  padding: 1rem 2rem;
+  text-align: center;
+  background-color: #ccc;
+  color: teal;
+  text-shadow: -2px 0 0 orange;
+  box-shadow: 0 0 10px #000;
+}
+
+.header h2 {
+  font-size: 3rem;
+}
