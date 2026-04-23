@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
+
 import "./FormArea.css";
 
-const FormArea = ({ onAdd }) => {
-  const [input, setInput] = useState("");
+const EditArea = ({ onEdit, id, name }) => {
+  const [input, setInput] = useState(name);
 
   const changeHandler = (e) => {
     console.log(e.target.value);
@@ -12,7 +12,7 @@ const FormArea = ({ onAdd }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    onAdd({ name: input, id: uuidv4() });
+    onEdit(input, id);
     setInput("");
   };
 
@@ -23,13 +23,13 @@ const FormArea = ({ onAdd }) => {
           onChange={changeHandler}
           type="text"
           name="task"
-          placeholder="Enter task name"
+          placeholder="Enter new task name"
           value={input}
         />
-        <button type="submit">ADD TASK</button>
+        <button type="submit">UPDATE TASK</button>
       </form>
     </div>
   );
 };
 
-export default FormArea;
+export default EditArea;
